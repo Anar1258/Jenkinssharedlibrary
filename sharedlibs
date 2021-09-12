@@ -1,0 +1,11 @@
+def call(String Stagename)
+{
+  if("${Stagename}" == "maven build")
+  {
+    sh "mvn clean package"
+  }
+  else if("${Stagename}" == "docker_login")
+  {
+    sh "docker login -u anjalisreedhar -p ${dockerhub_pwd}"
+  }
+}
